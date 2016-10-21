@@ -71,7 +71,7 @@ You can run the test suite for the library using:
 
     composer test
     
-A rest report will be available in the `reports` directory.
+A test report will be available in the `reports` directory.
 
 ## Contributing
 
