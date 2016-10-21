@@ -57,7 +57,7 @@ class Trampoline
         } else if(is_callable($f)) {
             $return = call_user_func_array($f, $args);
         } else  {
-            throw new \RuntimeException("Expected a callable or an instance of Trampoline.");
+            throw new \RuntimeException('Expected a callable or an instance of Trampoline.');
         }
 
         while($return instanceof self) {
