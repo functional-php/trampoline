@@ -1,4 +1,4 @@
-# Trampoline [![Build Status](https://travis-ci.org/functional-php/trampoline.svg)](https://travis-ci.org/functional-php/trampoline)
+# Trampoline [![Build Status](https://travis-ci.org/functional-php/trampoline.svg)](https://travis-ci.org/functional-php/trampoline) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/functional-php/trampoline/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/functional-php/trampoline/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/functional-php/trampoline/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/functional-php/trampoline/?branch=master)
 
 Trampolines are a technique used to avoid blowing the call stack when doing recursive calls. This is needed because PHP does not perform tail-call optimization.
 
