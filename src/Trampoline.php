@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPFunctional\Trampoline;
+namespace FunctionalPHP\Trampoline;
 
 class Trampoline
 {

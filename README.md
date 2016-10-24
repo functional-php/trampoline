@@ -31,7 +31,7 @@ We need to simply replace the recursive call by a call to the `bounce` static me
 ``` php
 <?php
 
-use PHPFunctional\Trampoline\Trampoline;
+use FunctionalPHP\Trampoline\Trampoline;
 
 function factorial($n, $acc = 1) {
     return $n <= 1 ? $acc : Trampoline::bounce('factorial', $n - 1, $n * $acc);
@@ -53,7 +53,7 @@ You can also call statically any function from the global namespace on the `Tram
 ``` php
 <?php
 
-use PHPFunctional\Trampoline\Trampoline;
+use FunctionalPHP\Trampoline\Trampoline;
 
 echo Trampoline::factorial(5);
 // 120

@@ -1,9 +1,9 @@
 <?php
 
-namespace PHPFunctional\Trampoline\tests\units;
+namespace FunctionalPHP\Trampoline\tests\units;
 
 use atoum;
-use PHPFunctional\Trampoline\Trampoline as T;
+use FunctionalPHP\Trampoline\Trampoline as T;
 
 function test_function_for_trampoline()
 {
@@ -16,7 +16,7 @@ class Trampoline extends atoum
     {
         $bounce = T::bounce(function() { return 'hello'; });
 
-        $this->object($bounce)->isInstanceOf('PHPFunctional\Trampoline\Trampoline');
+        $this->object($bounce)->isInstanceOf('FunctionalPHP\Trampoline\Trampoline');
         $this->string($bounce())->isEqualTo('hello');
     }
 
