@@ -14,11 +14,17 @@ class Pool
     private $recursing = false;
 
     /**
-     * @param \Closure $f
+     * @param callable $f
      */
-    protected function __construct(\Closure $f)
+    protected function __construct(callable $f)
     {
-        $this->f = $f->bindTo($this);
+        if($f instanceof \Closure) {
+            $this->f = $f->bindTo($this);
+        } elseif(method_exists('\Closure','fromCallable')) {
+            $this->f = \Closure::fromCallable($f)->bindTo($this);
+        } else {
+            throw new \RuntimeException('Using anything else than a callable is only possible for PHP >= 7.1.');
+        }
     }
 
     /**
@@ -45,10 +51,10 @@ class Pool
     }
 
     /**
-     * @param \Closure $f
+     * @param callable $f
      * @return callable
      */
-    public static function get(\Closure $f)
+    public static function get(callable $f)
     {
         return new static($f);
     }
