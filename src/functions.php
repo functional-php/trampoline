@@ -35,3 +35,18 @@ function trampoline(callable $f, ...$args)
 {
     return Trampoline::run($f, ...$args);
 }
+
+/**
+ * Alternative method to get a tail recursive function
+ * without risk of stack overflows.
+ *
+ * All recursive calls inside the function should be made
+ * by using the `$this` directly as a function.
+ *
+ * @param callable $f a tail recursive function
+ * @return callable equivalent function without stack overflow risk
+ */
+function pool(callable $f)
+{
+    return Pool::get($f);
+}

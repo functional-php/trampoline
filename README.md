@@ -72,6 +72,30 @@ echo Trampoline::strtoupper('Hello!');
 
 This will however not work for functions inside a namespace.
 
+## Alternative method
+
+The library also contain an alternative implementation to run tail recursive function without risking a stack overflow based on an argument queue instead of a trampoline.
+
+You will need to use the `$this` variable as the recursive function. Here is the factorial example using this second method.
+
+``` php
+<?php
+
+use FunctionalPHP\Trampoline as T;
+
+$fact = T\pool(function($n, $acc = 1) {
+    return $n <= 1 ? $acc : $this($n - 1, $n * $acc);
+});
+
+echo $fact(5);
+// 120
+
+```
+
+At this time, only anonymous functions (ie instance of the `Closure` class) are supported. But as soon as PHP 7.1 is released you will be able to use any callable.
+
+From a performance standpoint, there is no measurable difference between the two approaches.
+
 ## Testing
 
 You can run the test suite for the library using:
