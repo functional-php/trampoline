@@ -1,4 +1,11 @@
-# Trampoline [![Build Status](https://travis-ci.org/functional-php/trampoline.svg)](https://travis-ci.org/functional-php/trampoline) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/functional-php/trampoline/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/functional-php/trampoline/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/functional-php/trampoline/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/functional-php/trampoline/?branch=master)
+# Trampoline 
+
+[![Build Status](https://travis-ci.org/functional-php/trampoline.svg)](https://travis-ci.org/functional-php/trampoline)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/functional-php/trampoline/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/functional-php/trampoline/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/functional-php/trampoline/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/functional-php/trampoline/?branch=master)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/functional-php/trampoline.svg)](http://isitmaintained.com/project/functional-php/trampoline "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/functional-php/trampoline.svg)](http://isitmaintained.com/project/functional-php/trampoline "Percentage of issues still open")
+[![Chat on Gitter](https://img.shields.io/gitter/room/gitterHQ/gitter.svg)](https://gitter.im/functional-php)
 
 Trampolines are a technique used to avoid blowing the call stack when doing recursive calls. This is needed because PHP does not perform tail-call optimization.
 
