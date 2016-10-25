@@ -33,25 +33,25 @@ echo factorial(5);
 
 ```
 
-We need to simply replace the recursive call by a call to the `bounce` static method:
+We need to simply replace the recursive call by a call to the `bounce` function:
 
 ``` php
 <?php
 
-use FunctionalPHP\Trampoline\Trampoline;
+use FunctionalPHP\Trampoline as T;
 
 function factorial($n, $acc = 1) {
-    return $n <= 1 ? $acc : Trampoline::bounce('factorial', $n - 1, $n * $acc);
+    return $n <= 1 ? $acc : T\bounce('factorial', $n - 1, $n * $acc);
 };
 
-echo Trampoline::run('factorial', 5);
+echo T\trampoline('factorial', 5);
 // 120
 
 ```
 
-The `bounce` and `run` method accepts anything that is deemed a valid [`callable`](http://php.net/manual/en/language.types.callable.php) by PHP.
+The `bounce` and `trampoline` functions accepts anything that is deemed a valid [`callable`](http://php.net/manual/en/language.types.callable.php) by PHP.
 
-The `run` method will also accept an instance of `Trampoline` created by `bounce` but will ignore any arguments in this case.
+The `trampoline` function will also accept an instance of `Trampoline` created by `bounce` but will ignore any arguments in this case.
 
 ## Helpers
 

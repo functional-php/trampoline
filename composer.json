@@ -21,6 +21,9 @@
   "autoload": {
     "psr-4": {
       "FunctionalPHP\\Trampoline\\": "./src"
-    }
+    },
+    "files": [
+      "src/functions.php"
+    ]
   }
 }
