@@ -36,6 +36,13 @@ function trampoline(callable $f, ...$args)
     return Trampoline::run($f, ...$args);
 }
 
+function trampoline_wrapper(callable $f)
+{
+    return function(...$args) use($f) {
+        return Trampoline::run($f, ...$args);
+    };
+}
+
 /**
  * Alternative method to get a tail recursive function
  * without risk of stack overflows.

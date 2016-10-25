@@ -72,6 +72,24 @@ echo Trampoline::strtoupper('Hello!');
 
 This will however not work for functions inside a namespace.
 
+If you want to have a ready to call function when using a trampoline, you can use the `trampoline_wrapper` helper. It will create a wrapper function that will call `trampoline` for you and return the result.
+
+``` php
+<?php
+
+use FunctionalPHP\Trampoline as T;
+
+function factorial($n, $acc = 1) {
+    return $n <= 1 ? $acc : T\bounce('factorial', $n - 1, $n * $acc);
+};
+
+$fact = T\trampoline_wrapper('factorial');
+
+echo $fact(5);
+// 120
+
+```
+
 ## Alternative method
 
 The library also contain an alternative implementation to run tail recursive function without risking a stack overflow based on an argument queue instead of a trampoline.
